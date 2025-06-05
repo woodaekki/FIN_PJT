@@ -1,23 +1,10 @@
 # 💸 MONEYKEY-NEKO
 
-**MONEYKEY-NEKO**는 사용자가 본인의 조건에 맞는 예/적금 상품을 필터링하고, 다양한 금융 정보(시세, 유튜브, 챗봇 등)를 통합적으로 제공받을 수 있는 **통합 금융 플랫폼**입니다.  
-**주요 대상**은 금융 초보자, 사회 초년생이며, 지역 기반 금융 접근성과 정보 제공에 중점을 두고 있습니다.
-
+## 🔎 프로젝트 개요
 ---
 
-
-## 📅 개발 일정 및 역할 분담
-
-팀장 : 김민혁 | 상품 정보 조회 및 추천, 지도 조회 기능 구현
-팀원 : 김선우 | 주식정보 검색(삭제) 및 금은 시세 시각화, 게시판 구현 및 CSS
-
-| 날짜 | 김선우 | 김민혁 |
-|------|--------|--------|
-| 2025/05/22 | 로그인 구현, 게시판 기능 구현 | 회원가입 구현 |
-| 2025/05/23 | 게시판 CSS 개선, 주식정보 검색(삭제), 코드 개선 | 예/적금 목록 구현, 지도 기반 기능 |
-| 2025/05/24 | 금/은 시세 API 연동, 코드 개선 및 정리 | 추천 알고리즘 구현, 프로필 장바구니 |
-| 2025/05/25 | 전체 CSS 정리, 챗봇 연동 | 챗봇 연동 및 회원정보 수정 기능 |
-| 2025/05/26~27 | PPT 작성, 코드 개선 및 정리 | 문서 작성, 기능 오류 수정 |
+**MONEYKEY-NEKO**는 사용자가 본인의 조건에 맞는 예/적금 상품을 필터링하고, 다양한 금융 정보(시세, 유튜브, 챗봇 등)를 통합적으로 제공받을 수 있는 **통합 금융 플랫폼**입니다.  
+**주요 대상**은 금융 초보자, 사회 초년생이며, 지역 기반 금융 접근성과 정보 제공에 중점을 두고 있습니다.
 
 ---
 
@@ -112,18 +99,13 @@ python manage.py loaddata articles.json gold_prices.json silver_prices.json cust
 - `PUT /api/v1/profile/edit`
 
 ### 금융 상품 관련 (/api/v2/)
-- `GET /api/v2/deposit-products/`  
-- `GET /api/v2/saving-products/`  
-- `GET /api/v2/deposit-product-options/<fin_prdt_cd>/`  
-- `GET /api/v2/saving-product-options/<fin_prdt_cd>/`  
+- `GET /api/v2/deposits/`  
+- `GET /api/v2/savings/`  
+- `GET /api/v2/deposit-options/<fin_prdt_cd>/`  
+- `GET /api/v2/saving-options/<fin_prdt_cd>/`  
 - `GET /api/v2/deposit-options/`
 - `GET /api/v2/saving-options/`  
-- `GET /api/v2/get-product-code/`  
-- `GET /api/v2/load/deposits/`  
-- `GET /api/v2/load/deposit-options/`  
-- `GET /api/v2/load/savings/`  
-- `GET /api/v2/load/saving-options/`  
-- `POST /api/v2/save-products/`  
+- `GET /api/v2/get-product-code/`   
 
 ### 게시판 (/api/v3/)
 - `GET /api/v3/articles/`
@@ -131,8 +113,8 @@ python manage.py loaddata articles.json gold_prices.json silver_prices.json cust
 - `POST /api/v3/articles/`
 - `POST /api/v3/articles/<community_pk>/reviews/`
 - `DELETE /api/v3/articles/<community_pk>/reviews/<review_pk>/`
-- `GET /api/v3/fixed_articles/`
-- `GET /api/v3/fixed_articles/<pk>/`
+- `GET /api/v3/notice/`
+- `GET /api/v3/notice/<pk>/`
 
 ### 금/은 시세 (/api/v4/)
 - `GET /api/v4/gold_prices/`
@@ -199,20 +181,9 @@ final-pjt/
 
 ## 👏 개인 소감
 
-## 김민혁
-
-처음 해보는 프로젝트라 시작 단계에서 많은 어려움과 막막함을 느꼈습니다. <br>
-하지만 좋은 팀원과 함께 하나씩 해결해 나가며, 생각보다 훨씬 높은 완성도의 결과물을 만들 수 있었습니다 <br>
-이번 경험은 2학기 관통 프로젝트를 준비하는 데 든든한 밑거름이 될 것 같습니다.
-
-## 김선우
-
-짧은 프로젝트 기간에 비해 요구사항이 많아서 부담감이 컸지만, 잘 마무리할 수 있어 다행입니다. <br>
-최대한 학습한 내용을 이용하여 코드를 작성하고 정리하고자 했으나, <br>
-시간이 짧아 보다 가독성 있는 코드, 커스텀된 기능을 더 추가하지 못해 아쉽습니다. <br>
-특정 연령층을 타겟팅한 사이트를 만들어 더욱 매력있는 프로젝트를 만들고 싶었기 때문입니다.  <br>
-그러나 python부터 django, javascript, vue까지 한 학기동안 배운 기술들이 이렇게 많다니, <br>
-기술들을 활용하여 프로젝트를 완성해내다니 스스로의 성장이 느껴져 뿌듯합니다.
-
+짧은 프로젝트 기간에 비해 요구사항이 많았기에 개인적으로 코드 개선 및 재작성하여 다시 완성한 프로젝트 입니다. <br>
+특정 연령층을 타겟팅한 사이트를 만들어 더욱 매력있는 프로젝트를 만들지 못한 아쉬움은 여전히 남지만,  <br>
+python부터 django, javascript, vue까지 한 학기동안 배운 기술들을 활용하여 <br>
+프로젝트를 완성해내다니 스스로의 성장이 느껴져 뿌듯합니다.
 
 ---
